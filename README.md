@@ -12,5 +12,4 @@ This is my user configuration for Talon Voice.
 ## Links
 
 - [Talon Docs](https://talonvoice.com/docs/)
-- [Talon Community](https://talonvoice.com/community/)
 - [Wiki](https://talon.wiki/)

@@ -8,3 +8,5 @@ hey code [<user.text>]:
 hello code [<user.text>]:
     user.vscode("workbench.action.openChat.copilot")
     insert(user.text or "")
+
+rerun: user.vscode("workbench.action.terminal.runRecentCommand")

@@ -10,3 +10,5 @@ hello code [<user.text>]:
     insert(user.text or "")
 
 rerun: user.vscode("workbench.action.terminal.runRecentCommand")
+
+artisan test: user.run_rpc_command("workbench.action.tasks.runTask", "Laravel: Test")

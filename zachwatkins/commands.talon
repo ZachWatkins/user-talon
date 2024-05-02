@@ -5,3 +5,7 @@ mode: command
 ^morning$: sleep(5ms)
 ^hey$: sleep(5ms)
 ^howdy$: sleep(5ms)
+
+# Talon frequently misinterprets these commands, likely due to microphone noise.
+^pit bat$: edit.paste() # "paste that"
+^ten$: key(tab) # "tab"

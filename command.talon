@@ -8,4 +8,5 @@ mode: command
 
 # Talon frequently misinterprets these commands, likely due to microphone noise.
 ^pit bat$: edit.paste() # "paste that"
+^paste at$: edit.paste() # "paste that"
 ^(ta | tap)$: key(tab) # "tab"

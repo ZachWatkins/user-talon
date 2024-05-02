@@ -9,7 +9,7 @@ hello code [<user.text>]:
     user.vscode("workbench.action.openChat.copilot")!
     insert(user.text or "")
 
-rerun: user.vscode("workbench.action.terminal.runRecentCommand")
+again: user.vscode("workbench.action.terminal.runRecentCommand")
 
 artisan test: user.run_rpc_command("workbench.action.tasks.runTask", "Laravel: Test")
 

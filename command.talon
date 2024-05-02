@@ -10,3 +10,16 @@ mode: command
 ^pit bat$: edit.paste() # "paste that"
 ^paste at$: edit.paste() # "paste that"
 ^(ta | tap)$: key(tab) # "tab"
+
+### text navigation ###
+up: key(up)
+down: key(down)
+left: key(left)
+right: key(right)
+
+### text manipulation ###
+drop: key(backspace)
+dropper: key(backspace:2)
+
+### quick text ###
+thumbs up: insert('👍')

@@ -25,3 +25,9 @@ dropper: key(backspace:2)
 thumbs up: insert('👍')
 
 ^switch [<phrase>]$: user.switch_apps()
+
+copy: edit.copy()
+cut: edit.cut()
+paste: edit.paste()
+undo: edit.undo()
+redo: edit.redo()

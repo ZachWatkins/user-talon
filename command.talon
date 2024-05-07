@@ -23,3 +23,5 @@ dropper: key(backspace:2)
 
 ### quick text ###
 thumbs up: insert('👍')
+
+^switch [<phrase>]$: user.switch_apps()

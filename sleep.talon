@@ -1,6 +1,6 @@
 mode: sleep
 -
 
-^(resume)+$:
+resume:
     user.mouse_wake()
     user.talon_mode()

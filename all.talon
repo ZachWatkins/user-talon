@@ -2,7 +2,7 @@ mode: command
 mode: dictation
 -
 
-^stop [<phrase>]$:
+^pause [<phrase>]$:
     user.switcher_hide_running()
     user.history_disable()
     user.homophones_hide()

@@ -18,7 +18,7 @@ left: key(left)
 right: key(right)
 
 ### text manipulation ###
-drop: key(backspace)
+drop | draw: key(backspace)
 dropper: key(backspace:2)
 
 ### quick text ###

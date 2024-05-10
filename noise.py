@@ -1,9 +1,25 @@
-from talon import noise, speech_system
+from talon import Context, actions
 
-def on_pop(active):
-    speech_system.engine_mimic("wake up"),
-noise.register("pop", on_pop)
+command_ctx = Context()
+command_ctx.matches = r"""
+mode: command
+os: mac
+"""
 
-def on_hiss(active):
-    speech_system.engine_mimic("go to sleep"),
-noise.register("hiss", on_hiss)
+dictation_ctx = Context()
+dictation_ctx.matches = r"""
+mode: dictation
+os: mac
+"""
+
+@command_ctx.action_class("user")
+class UserActions:
+    def noise_trigger_pop():
+        print("popped during command")
+        actions.user.dictation_mode()
+
+@dictation_ctx.action_class("user")
+class UserActions:
+    def noise_trigger_pop():
+        print("popped during dictation")
+        actions.user.command_mode()

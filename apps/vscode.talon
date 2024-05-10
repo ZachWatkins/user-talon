@@ -15,7 +15,9 @@ artisan test: user.run_rpc_command("workbench.action.tasks.runTask", "Laravel: T
 
 docker up: "docker-compose up -d\n"
 docker down: "docker-compose down\n"
-node run: insert('npm run ')
+node run: "npm run "
+node start: "npm start\n"
+node install: "npm install\n"
 
 point: key(- >)
 pointer: key(space = > space)

@@ -2,11 +2,11 @@
 app: vscode
 -
 hey code [<user.text>]:
-    user.vscode("workbench.action.openQuickChat.copilot")
+    user.vscode("workbench.action.openQuickChat")
     insert(user.text or "")
 
 hello code [<user.text>]:
-    user.vscode("workbench.action.openChat.copilot")!
+    user.vscode("workbench.action.openChat")!
     insert(user.text or "")
 
 again: user.vscode("workbench.action.terminal.runRecentCommand")

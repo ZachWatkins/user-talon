@@ -1,4 +1,4 @@
-from talon import Context, actions
+from talon import Context, actions, speech_system
 
 command_ctx = Context()
 command_ctx.matches = r"""
@@ -16,7 +16,11 @@ os: mac
 class UserActions:
     def noise_trigger_pop():
         print("popped during command")
-        actions.user.dictation_mode()
+        actions.user.dictation_mode(),
+
+    def noise_trigger_hiss():
+        print("hissed during command")
+        speech_system.engine_mimic("go to sleep")
 
 @dictation_ctx.action_class("user")
 class UserActions:

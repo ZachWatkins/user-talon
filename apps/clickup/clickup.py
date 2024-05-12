@@ -19,7 +19,7 @@ class Actions:
             actions.key("ctrl-enter")
         actions.sleep("1000ms")
 
-    def clickup_task_create(text: str)
+    def clickup_task_create(text: str):
         actions.key("t")
         actions.sleep("200ms")
         actions.insert(text)

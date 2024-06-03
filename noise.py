@@ -26,9 +26,9 @@ class UserActions:
         actions.user.code_clear_language_mode()
         actions.user.gdb_disable(),
 
-    def noise_trigger_hiss():
-        print("hissed during command")
-        speech_system.engine_mimic("go to sleep")
+    # def noise_trigger_hiss(active: bool):
+    #     print("hissed during command")
+    #     speech_system.engine_mimic("go to sleep")
 
 @dictation_ctx.action_class("user")
 class UserActions:

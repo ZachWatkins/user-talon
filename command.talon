@@ -34,3 +34,6 @@ paste: edit.paste()
 undo: edit.undo()
 redo: edit.redo()
 screenshot: key(cmd-shift-4)
+
+mouse off: user.mouse_sleep()
+mouse on: user.mouse_wake()

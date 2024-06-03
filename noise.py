@@ -1,4 +1,5 @@
 from talon import Context, actions, app, speech_system
+from talon_plugins import eye_mouse, eye_zoom_mouse
 
 command_ctx = Context()
 command_ctx.matches = r"""
@@ -16,6 +17,12 @@ os: mac
 class UserActions:
     def noise_trigger_pop():
         """Enable dictation mode"""
+        # If mouse is enabled, do not switch to dictation mode.
+        if eye_zoom_mouse.zoom_mouse.enabled:
+            return
+
+        # if actions.tracking.control_enabled():
+        #     return
         print("popped during command")
         app.notify(title="Dictation mode",
                    subtitle="On",

@@ -13,11 +13,13 @@ mode: command
 # "tab"
 ^(ta | tap)$: key(tab)
 
-### text navigation ###
+### direction keys ###
 up: key(up)
 down: key(down)
 left: key(left)
 right: key(right)
+next slide: key(right)
+last slide: key(left)
 
 ### text manipulation ###
 ^(drop | draw): key(backspace)
@@ -37,3 +39,7 @@ screenshot: key(cmd-shift-4)
 
 mouse off: user.mouse_sleep()
 mouse on: user.mouse_wake()
+
+### Screencasting ###
+grab that: user.screen_record()
+grab cameras: user.screencast_start()

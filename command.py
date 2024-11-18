@@ -44,7 +44,25 @@ class Actions:
             rect = ui.active_window().rect
             ctrl.mouse_move(rect.left + (rect.width / 2), rect.top + (rect.height / 2))
         elif app.platform == "windows":
+            # actions.key("super-shift-r"); rect = ui.main_screen().rect; previous_position = ctrl.mouse_pos(); ctrl.mouse_move(0, 0); actions.sleep("750ms"); ctrl.mouse_click(button=0, down=True); ctrl.mouse_move(rect.width, rect.height); ctrl.mouse_click(button=0, up=True); actions.sleep("50ms"); ctrl.mouse_move((rect.width / 2) - 135, 48); actions.sleep("500ms"); ctrl.mouse_move((rect.width / 2) - 140, 48); actions.sleep("50ms"); ctrl.mouse_click(button=0, down=True); actions.sleep("50ms"); ctrl.mouse_click(button=0, down=True); actions.sleep("500ms"); ctrl.mouse_click(button=0, up=True);
             actions.key("super-shift-r")
-            # actions.key("super-shift-r"); rect = ui.main_screen().rect; previous_position = ctrl.mouse_pos(); ctrl.mouse_move(0, 0); actions.sleep("750ms"); ctrl.mouse_click(button=0, down=True); ctrl.mouse_move(rect.width, rect.height); ctrl.mouse_click(button=0, up=True); actions.sleep("400ms"); ctrl.mouse_move((rect.width / 2) - 135, 48); actions.sleep("500ms"); ctrl.mouse_move((rect.width / 2) - 140, 48); actions.sleep("50ms"); ctrl.mouse_click(button=0, down=True); actions.sleep("400ms"); ctrl.mouse_click(button=0, down=True); actions.sleep("500ms"); ctrl.mouse_click(button=0, up=True);
+            actions.key("super-shift-r")
+            rect = ui.main_screen().rect
+            previous_position = ctrl.mouse_pos()
+            ctrl.mouse_move(0, 0)
+            actions.sleep("750ms")
+            ctrl.mouse_click(button=0, down=True)
+            ctrl.mouse_move(rect.width, rect.height)
+            ctrl.mouse_click(button=0, up=True)
+            actions.sleep("50ms")
+            ctrl.mouse_move((rect.width / 2) - 135, 48)
+            actions.sleep("500ms")
+            ctrl.mouse_move((rect.width / 2) - 140, 48)
+            actions.sleep("50ms")
+            ctrl.mouse_click(button=0, down=True)
+            actions.sleep("50ms")
+            ctrl.mouse_click(button=0, down=True)
+            actions.sleep("500ms")
+            ctrl.mouse_click(button=0, up=True)
         else:
             print("Unhandled platform in screen_record: " + app.platform)

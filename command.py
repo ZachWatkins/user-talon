@@ -9,6 +9,18 @@ mode: command
 
 @mod.action_class
 class Actions:
+    def switch_to_dictation_mode():
+        """Switch from command to dictation mode"""
+        print("switching to dictation mode")
+        app.notify(title="Dictation mode",
+                   subtitle="On",
+                   sound=True)
+        actions.mode.disable("sleep")
+        actions.mode.disable("command")
+        actions.mode.enable("dictation")
+        actions.user.code_clear_language_mode()
+        actions.user.gdb_disable()
+
     def switch_apps():
         """Switch to the previous app"""
         if app.platform == "mac":

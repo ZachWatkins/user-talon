@@ -1,3 +1,6 @@
 [submodule "Omega_Mouse"]
 	path = Omega_Mouse
 	url = https://github.com/MichaelOmegatron/Omega_Mouse
+[submodule "community"]
+	path = community
+	url = https://github.com/talonhub/community

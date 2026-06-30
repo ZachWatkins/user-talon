@@ -57,8 +57,6 @@ console error:
 process exit:
     insert('process.exit();')
     key(left:2)
-equals: insert(' === ')
-not equals: insert(' !== ')
 
 code import:
     insert('import {  } from ;')

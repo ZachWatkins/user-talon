@@ -17,8 +17,10 @@ mode: command
     user.clickup_task_set_priority("Normal")
     user.clickup_task_start_now()
     user.clickup_task_submit()
-    key(3) # Copy the URL of the task, which includes the task ID at the end of the URL.
-    sleep(100ms) # The task ID is now in the clipboard.
+    # Copy the URL of the task, which includes the task ID at the end of the URL.
+    key(3)
+    # The task ID is now in the clipboard.
+    sleep(100ms)
     # Generate a GitHub branch name using the task ID and the name of the task. The name of the task should only contain alphanumeric characters, and all spaces should be replaced with underscores.
     git_branch_name = user.clickup_get_git_branch_name(task_name)
     # Create a new branch in the current repository with the generated branch name.

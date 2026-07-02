@@ -6,7 +6,7 @@ hey code [<user.text>]:
     insert(user.text or "")
 
 hello code [<user.text>]:
-    user.vscode("workbench.action.openChat")!
+    user.vscode("workbench.action.openChat")
     insert(user.text or "")
 
 again: user.vscode("workbench.action.terminal.runRecentCommand")
@@ -63,7 +63,7 @@ code import:
     key(left)
     key('"')
 export: insert('export ')
-export default: insert('expert default ')
+export default: insert('export default ')
 constant: insert('const ')
 lettuce: insert('let ')
 code return:
@@ -71,12 +71,6 @@ code return:
     key(left)
 
 # php
-public: insert('public ')
-protected: insert('protected ')
-private: insert('private ')
 elephant:
     insert('<?php  ?>')
     key(left:3)
-for each:
-    insert('foreach ('))
-    key('$')

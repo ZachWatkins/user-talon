@@ -17,14 +17,13 @@ class Actions:
             actions.key("cmd-enter")
         else:
             actions.key("ctrl-enter")
-        actions.sleep("1000ms")
+        actions.sleep("800ms")
 
     def clickup_task_create(text: str):
         """Create a task with the specified text"""
         actions.key("t")
         actions.sleep("500ms")
         actions.insert(text)
-        actions.key("enter")
         actions.sleep("100ms")
 
     def clickup_task_assign_to_me():

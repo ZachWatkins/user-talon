@@ -1,10 +1,10 @@
-# For this to work, you need to have the ClickUp hotkeys setting enabled.
-# To enable hotkeys:
+# For this to work, you need to have the ClickUp Keyboard Shortcuts setting enabled.
+# To enable Keyboard Shortcuts:
 # 1. In the upper-right corner, click your account avatar and select Settings.
 # 2. Scroll down to the Preferences section.
-# 3. Click Hotkeys on.
+# 3. Toggle Keyboard Shortcuts on.
 # 4. Click *Save changes*.
-# https://help.clickup.com/hc/en-us/articles/6309030550167-Use-hotkeys-and-keyboard-shortcuts
+# https://help.clickup.com/hc/en-us/articles/6309030550167-Use-keyboard-shortcuts
 mode: command
 -
 

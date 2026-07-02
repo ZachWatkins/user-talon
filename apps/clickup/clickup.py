@@ -22,7 +22,7 @@ class Actions:
     def clickup_task_create(text: str):
         """Create a task with the specified text"""
         actions.key("t")
-        actions.sleep("200ms")
+        actions.sleep("500ms")
         actions.insert(text)
         actions.key("enter")
         actions.sleep("100ms")
@@ -32,18 +32,6 @@ class Actions:
         actions.key("/")
         actions.sleep("100ms")
         actions.insert("Assign to me")
-        actions.sleep("100ms")
-        actions.key("enter")
-        actions.sleep("100ms")
-
-    def clickup_task_assign_to(name: str):
-        """Assign the task to the specified user"""
-        actions.key("/")
-        actions.sleep("100ms")
-        actions.insert("assign")
-        actions.key("enter")
-        actions.sleep("100ms")
-        actions.insert(name)
         actions.sleep("100ms")
         actions.key("enter")
         actions.sleep("100ms")
@@ -86,16 +74,10 @@ class Actions:
         task_name_in_branch = re.sub(r"[^a-zA-Z0-9]", "", task_name.replace(" ", "_"))
         return f"ClickUp-{task_id}_{task_name_in_branch}"
 
-    def clickup_task_create_from_selection(formatters: str) -> str:
+    def get_selected_text() -> str:
         """Create task from selection."""
-        selected = edit.selected_text()
+        selected = actions.edit.selected_text()
         if not selected:
-            app.notify("Asked to create task from selection, but nothing selected!")
+            app.notify("No text selected!")
             return
-        # Open Chrome and navigate to ClickUp.
-        user.switcher_focus("Google Chrome")
-        actions.browser.focus_address()
-        actions.insert("https://app.clickup.com/")
-        actions.key("enter")
-        actions.sleep("500ms")
         return selected

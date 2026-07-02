@@ -10,10 +10,16 @@ mode: command
 
 # Use the selected text as the name of the task.
 ^clickup task$:
-    task_name = user.clickup_task_create_from_selection()
+    task_name = user.get_selected_text()
+    user.switcher_focus("Google Chrome")
+    key("cmd-3")
+    sleep(500ms)
     user.clickup_task_create(task_name)
+    key("tab")
+    sleep(100ms)
     user.clickup_task_assign_to_me()
-    user.clickup_task_set_status("In Progress")
+    # Set status to "In Progress", which is selected automatically when typing "Progress".
+    user.clickup_task_set_status("Progress")
     user.clickup_task_set_priority("Normal")
     user.clickup_task_start_now()
     user.clickup_task_submit()

@@ -10,32 +10,13 @@ mode: command
 
 # Use the selected text as the name of the task.
 ^clickup task$:
-    task_name = user.get_selected_text()
+    mode.disable("command")
+    task_name = edit.selected_text()
+    sleep(100ms)
     user.switcher_focus("Google Chrome")
+    sleep(100ms)
     key("cmd-3")
     sleep(500ms)
-    user.clickup_task_create(task_name)
-    key("tab")
-    sleep(100ms)
-    user.clickup_task_assign_to_me()
-    # Set status to "In Progress", which is selected automatically when typing "Progress".
-    user.clickup_task_set_status("Progress")
-    user.clickup_task_set_priority("Normal")
-    user.clickup_task_start_now()
-    user.clickup_task_submit()
-    # Pin to bottom of window.
-    key(1)
-    sleep(100ms)
-    # Copy the URL of the task, which includes the task ID at the end of the URL.
-    key(2)
-    sleep(100ms)
-    # View the task.
-    key(3)
-    sleep(100ms)
-    # Generate a GitHub branch name using the task ID and the name of the task. The name of the task should only contain alphanumeric characters, and all spaces should be replaced with underscores.
-    git_branch_name = user.clickup_get_git_branch_name(task_name)
-    # Create a new branch in the current repository with the generated branch name.
-    user.switcher_focus("Code")
-    user.vscode("git.checkout")
-    sleep(50ms)
-    insert(git_branch_name)
+    task_url = user.clickup_task_create(task_name)
+    user.github_branch_issue_create(task_name, task_url)
+    mode.enable("command")

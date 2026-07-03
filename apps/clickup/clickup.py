@@ -44,7 +44,7 @@ class Actions:
         task_url = clip.text()
         # View the task.
         actions.key("3")
-        actions.sleep("100ms")
+        actions.sleep("500ms")
         return task_url
 
     def github_branch_issue_create(task_name: str, task_url: str):
@@ -55,6 +55,10 @@ class Actions:
         if not task_url:
             app.notify("Task URL is missing!")
             return
+        actions.user.switcher_focus("Code")
+        actions.sleep("200ms")
+        actions.user.vscode("workbench.action.terminal.new")
+        actions.sleep("3000ms")
         # Generate a GitHub issue and branch using the task ID and the name of the task.
         command = f"gh issue create --title \"{task_name}\" --body \"ClickUp task: {task_url}\" --assignee \"@me\""
         actions.insert(command)
@@ -81,7 +85,9 @@ class Actions:
         current_branch_name = clip.text().strip()
         # Create a branch for the issue.
         git_branch_name = actions.user.clickup_get_git_branch_name(task_name, task_url)
-        command = f"gh issue develop {issue_id} --name {git_branch_name} --base {current_branch_name}"
+        command = f"gh issue develop {issue_id} --name {git_branch_name} --base
+        {current_branch_name}"
+        print(f"Creating branch: {git_branch_name} from base: {current_branch_name} for issue: {issue_id}. Command: {command}")
         actions.insert(command)
         actions.key("enter")
         actions.sleep("6000ms")

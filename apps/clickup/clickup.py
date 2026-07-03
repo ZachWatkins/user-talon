@@ -85,8 +85,7 @@ class Actions:
         current_branch_name = clip.text().strip()
         # Create a branch for the issue.
         git_branch_name = actions.user.clickup_get_git_branch_name(task_name, task_url)
-        command = f"gh issue develop {issue_id} --name {git_branch_name} --base
-        {current_branch_name}"
+        command = f"gh issue develop {issue_id} --name {git_branch_name} --base {current_branch_name}"
         print(f"Creating branch: {git_branch_name} from base: {current_branch_name} for issue: {issue_id}. Command: {command}")
         actions.insert(command)
         actions.key("enter")

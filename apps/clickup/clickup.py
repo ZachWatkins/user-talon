@@ -92,12 +92,10 @@ class Actions:
         current_branch_name = clip.text().strip()
         # Create a branch for the issue.
         git_branch_name = actions.user.clickup_get_git_branch_name(task_name, task_url)
-        command = f"gh issue develop {issue_id} --name {git_branch_name} --base {current_branch_name}"
+        command = f"gh issue develop {issue_id} --name {git_branch_name} --base {current_branch_name} --checkout"
         print(f"Creating branch: {git_branch_name} from base: {current_branch_name} for issue: {issue_id}. Command: {command}")
         actions.insert(command)
         actions.key("enter")
-        actions.sleep("6000ms")
-        actions.user.vscode("workbench.action.terminal.kill")
 
     def clickup_task_assign_to_me():
         """Assign the task to the current user"""

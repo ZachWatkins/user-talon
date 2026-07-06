@@ -68,7 +68,14 @@ class Actions:
         actions.user.vscode("workbench.action.terminal.copyLastCommandOutput")
         actions.sleep("100ms")
         last_output = clip.text()
-        issue_id = last_output.split("/")[-1].strip()
+        # Find the first line of text in the output that matches the pattern of a GitHub issue URL.
+        match = re.search(r"https://github.com/.*?/.*?/issues/\d+", last_output)
+        if not match:
+            app.notify("Failed to find GitHub issue URL in terminal output:\n" + last_output)
+            return
+        issue_url = match.group(0)
+        # Get the issue ID from the URL.
+        issue_id = issue_url.split("/")[-1]
         issue_id_only_numbers = re.sub(r"\D", "", issue_id)
         # If the lengths differ, then the issue ID was not selected correctly. Alert the user and return.
         if len(issue_id) != len(issue_id_only_numbers):

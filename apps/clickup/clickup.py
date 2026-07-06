@@ -63,10 +63,10 @@ class Actions:
         command = f"gh issue create --title \"{task_name}\" --body \"ClickUp task: {task_url}\" --assignee \"@me\""
         actions.insert(command)
         actions.key("enter")
-        actions.sleep("6000ms")
+        actions.sleep("7000ms")
         # Get the last line of the terminal output which is the URL of the issue.
         actions.user.vscode("workbench.action.terminal.copyLastCommandOutput")
-        actions.sleep("100ms")
+        actions.sleep("300ms")
         last_output = clip.text()
         # Find the first line of text in the output that matches the pattern of a GitHub issue URL.
         match = re.search(r"https://github.com/.*?/.*?/issues/\d+", last_output)
@@ -86,9 +86,9 @@ class Actions:
         command = f"git rev-parse --abbrev-ref HEAD"
         actions.insert(command)
         actions.key("enter")
-        actions.sleep("1000ms")
+        actions.sleep("300ms")
         actions.user.vscode("workbench.action.terminal.copyLastCommandOutput")
-        actions.sleep("100ms")
+        actions.sleep("300ms")
         current_branch_name = clip.text().strip()
         # Create a branch for the issue.
         git_branch_name = actions.user.clickup_get_git_branch_name(task_name, task_url)

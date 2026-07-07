@@ -1,9 +1,0 @@
-{
-    "[python]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": "always"
-        },
-        "editor.defaultFormatter": "charliermarsh.ruff"
-    }
-}

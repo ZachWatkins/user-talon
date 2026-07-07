@@ -1,5 +1,0 @@
-gpt-settings.talon
-# TalonDoc
-/docs/_build
-.ruff_cache/
-.mypy_cache/

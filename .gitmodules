@@ -4,3 +4,6 @@
 [submodule "community"]
 	path = community
 	url = https://github.com/talonhub/community
+[submodule "talon-ai-tools"]
+	path = talon-ai-tools
+	url = https://github.com/c-loftus/talon-ai-tools

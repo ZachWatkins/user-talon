@@ -43,5 +43,3 @@ mouse on: user.mouse_wake()
 ### Screencasting ###
 grab that: user.screen_record()
 grab cameras: user.screencast_start()
-
-key(^:down): user.switch_to_dictation_mode()

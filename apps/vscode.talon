@@ -19,8 +19,6 @@ node run: "npm run "
 node start: "npm start\n"
 node install: "npm install\n"
 
-point: key(- >)
-pointer: key(space = > space)
 assign:
     insert(' = ;')
     key(left)

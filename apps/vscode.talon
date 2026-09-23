@@ -13,11 +13,11 @@ again: user.vscode("workbench.action.terminal.runRecentCommand")
 
 artisan test: user.run_rpc_command("workbench.action.tasks.runTask", "Laravel: Test")
 
-docker up: "docker-compose up -d\n"
-docker down: "docker-compose down\n"
+docker up: "docker-compose up -d"
+docker down: "docker-compose down"
 node run: "npm run "
-node start: "npm start\n"
-node install: "npm install\n"
+node start: "npm start"
+node install: "npm install"
 
 assign:
     insert(' = ;')

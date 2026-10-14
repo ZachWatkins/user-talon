@@ -72,3 +72,9 @@ code return:
 elephant:
     insert('<?php  ?>')
     key(left:3)
+
+git stage selection:
+    user.vscode("git.stageSelectedRanges")
+
+git revert selection:
+    user.vscode("git.revertSelectedRanges")

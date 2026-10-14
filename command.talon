@@ -6,12 +6,8 @@ mode: command
 ^hey$: sleep(5ms)
 ^howdy$: sleep(5ms)
 
-# Talon frequently misinterprets these commands, likely due to microphone noise.
-# "paste that"
-^pit bat$: edit.paste()
-^paste at$: edit.paste()
-# "tab"
-^(ta | tap)$: key(tab)
+### just for fun ###
+enhance: edit.zoom_in()
 
 ### direction keys ###
 up: key(up)

@@ -7,6 +7,8 @@ ctx.matches = r"""
 mode: command
 """
 
+head_tracking_enabled = False
+
 @mod.action_class
 class Actions:
     def switch_to_dictation_mode():
@@ -78,3 +80,15 @@ class Actions:
             ctrl.mouse_click(button=0, up=True)
         else:
             print("Unhandled platform in screen_record: " + app.platform)
+
+    def toggle_head_tracking():
+        """Toggle head tracking"""
+        global head_tracking_enabled
+        head_tracking_enabled = not head_tracking_enabled
+        if app.platform == "mac":
+            # Implement macOS-specific head tracking toggle
+            if head_tracking_enabled:
+                actions.user.shortcut_run_nb("Enable Head Mouse")
+            else:
+                actions.user.shortcut_run_nb("Disable Head Mouse")
+        actions.skip()

@@ -9,3 +9,7 @@ head up: user.shortcut_run_nb("Enable Head Mouse")
 head down: user.shortcut_run_nb("Disable Head Mouse")
 face up: user.shortcut_run_nb("Enable Alternate Pointer Actions")
 face down: user.shortcut_run_nb("Disable Alternate Pointer Actions")
+
+### Toggle head and face tracking on pop noise.
+noise(pop):
+  user.toggle_head_tracking()

@@ -15,3 +15,8 @@ settings():
     # user.mouse_enable_hiss_scroll = True
     # (bool) Replace subtitles with separate module
     # speech._subtitles = False
+    user.subtitles_show = true
+    user.subtitles_size = 50
+    user.subtitles_y = 0.95
+    user.subtitles_color_outline = "000000"
+    user.subtitles_screens = "focus"

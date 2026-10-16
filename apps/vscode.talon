@@ -2,11 +2,11 @@
 app: vscode
 -
 hey code [<user.text>]:
-    user.vscode("workbench.action.openQuickChat")
+    user.vscode("workbench.panel.chat.view.copilot.focus")
     insert(user.text or "")
 
-hello code [<user.text>]:
-    user.vscode("workbench.action.openChat")
+hi code [<user.text>]:
+    user.vscode("workbench.action.openQuickChat")
     insert(user.text or "")
 
 again: user.vscode("workbench.action.terminal.runRecentCommand")
@@ -56,10 +56,6 @@ process exit:
     insert('process.exit();')
     key(left:2)
 
-code import:
-    insert('import {  } from ;')
-    key(left)
-    key('"')
 export: insert('export ')
 export default: insert('export default ')
 constant: insert('const ')

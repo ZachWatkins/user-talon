@@ -12,7 +12,7 @@ settings():
     # (bool) record all phrases (locally)
     # speech.record_all = False
     # (bool) Hiss noise scrolls down when enabled
-    # user.mouse_enable_hiss_scroll = True
+    user.mouse_enable_hiss_scroll = true
     # (bool) Replace subtitles with separate module
     # speech._subtitles = False
     user.subtitles_show = true
